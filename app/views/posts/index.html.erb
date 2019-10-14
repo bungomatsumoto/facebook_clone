@@ -1,0 +1,16 @@
+<h2>全ユーザーの投稿一覧</h2>
+
+<table>
+  <tr>
+    <th>本文</th>
+  </tr>
+
+<%= @posts.each do |post| %>
+  <tr>
+    <td><%= post.content %></td>
+    <td><%= link_to '詳細を見る', post_path(post.id) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '新しく投稿する', new_post_path %>
