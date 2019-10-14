@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :get_id_blog, only: [:show, :edit, :update, :destroy]
+  before_action :get_id_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -11,10 +11,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to posts_path, notice: "投稿を作成しました"
-    else
+    if params[:back]
       render :new
+    else
+      if @post.save
+        redirect_to posts_path, notice: "投稿を作成しました"
+      else
+        render :new
+      end
     end
   end
 
@@ -32,6 +36,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def confirm
+    @post = Post.new(post_params)
+    render :new if @post.invalid?
+  end
+
   def destroy
     @post.destroy
     redirect_to posts_path, notice: "投稿を削除しました"
@@ -43,7 +52,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:content)
   end
 
-  def get_id_blog
+  def get_id_post
     @post = Post.find(params[:id])
   end
 end
