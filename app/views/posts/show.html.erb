@@ -1,5 +1,11 @@
 <h2>詳細画面</h2>
 
+<p>Image:
+  <%= image_tag(@post.image.url) if @post.image.present?  %>
+  <%# ifがないと画像ない場合に表示エラーとなる %>
+</p>
+
 <p>本文： <%= @post.content %></p>
 
+<%# <%= link_to "編集する", edit_post_path(post.id) %> %>
 <%= link_to "全ユーザー投稿一覧画面へ", posts_path %>

@@ -8,10 +8,20 @@
     </div>
   <% end %>
 
+  <div class="post_image">
+    <%= form.label :image %>
+    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+
   <div class="post_content">
     <%= form.label :本文 %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+
+  <div class="">
+    <%= form.submit %>
+  </div>
 <% end %>
 <%= link_to "全ユーザー投稿一覧画面へ", posts_path %>
