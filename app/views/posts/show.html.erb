@@ -1,4 +1,4 @@
-<h2>詳細画面</h2>
+<h3>詳細画面</h3>
 
 <p>Image:
   <%= image_tag(@post.image.url) if @post.image.present?  %>
@@ -8,4 +8,4 @@
 <p>本文： <%= @post.content %></p>
 
 <%# <%= link_to "編集する", edit_post_path(post.id) %> %>
-<%= link_to "全ユーザー投稿一覧画面へ", posts_path %>
+<p class="to_other_page"><%= link_to "全ユーザーの投稿", posts_path %></p>

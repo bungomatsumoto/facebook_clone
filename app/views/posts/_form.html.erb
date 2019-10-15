@@ -9,7 +9,7 @@
   <% end %>
 
   <div class="post_image">
-    <%= form.label :image %>
+    <%= form.label :画像 %>
     <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
@@ -17,11 +17,11 @@
 
   <div class="post_content">
     <%= form.label :本文 %>
-    <%= form.text_field :content %>
+    <%= form.text_area :content %>
   </div>
 
-  <div class="">
+  <div class="button">
     <%= form.submit %>
   </div>
 <% end %>
-<%= link_to "全ユーザー投稿一覧画面へ", posts_path %>
+<p class="to_other_page"><%= link_to "全ユーザーの投稿", posts_path %></p>

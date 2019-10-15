@@ -1,25 +1,19 @@
-<h2>全ユーザーの投稿一覧</h2>
+<h3>全ユーザーの投稿一覧</h3>
 
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>ユーザー</th>
-    <th>Image</th>
-    <th>本文</th>
-    <th colspan="3"></th>
-  </tr>
-
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.user.name %></td>
-    <td><%= image_tag post.image.to_s %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to '詳細を見る', post_path(post.id) %></td>
-    <td><%= link_to "編集する", edit_post_path(post.id) %></td>
-    <td><%= link_to "削除する", post_path(post.id), method: :delete, data: { confirm: '本当に削除しますか？' }  %></td>
-  </tr>
-<% end %>
-</table>
 
-<%= link_to '新しく投稿する', new_post_path %>
+  <div class="one_post">
+    <p class="post_user"><%= image_tag "man.png", size: '23x23' %><%= post.user.name %></p>
+    <p class="post_content"><%= post.content %></p>
+    <p><%= image_tag post.image.to_s %></p>
+    <div class="post_option">
+      <p><%= link_to '詳細を見る', post_path(post.id) %></p>
+      <p><%= link_to "編集する", edit_post_path(post.id) %></p>
+      <p><%= link_to "削除する", post_path(post.id), method: :delete, data: { confirm: '本当に削除しますか？' }  %></p>
+    </div>
+  </div>
+<% end %>
+
+<p class="to_other_page"><%= link_to '新しく投稿する', new_post_path %></p>

@@ -1,15 +1,156 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  color: #333;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}
+
+#header_title {
+  font-family: "Voces";
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  opacity: 0.5;
+}
+a:link, a:visited {
+  color: #333;
+}
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 90px;
+  box-sizing: border-box;
+}
+
+.signup_form {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signup_item {
+  margin-bottom: 10px;
+}
+
+header {
+  height: 50px;
+  background-color: #4267B2;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header_container {
+  display: flex;
+  justify-content: center;
+}
+
+.header_container span {
+  vertical-align: middle;
+}
+img.fakebooks_icon {
+  height: 30px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+#login {
+  text-align: left;
+}
+.login_entrance {
+  font-size: 0.8rem;
+  margin-right: 5px;
+  padding: 2px;
+  width: 200px;
+  background-color: #C3C3C3;
+  border-radius: 0.8rem;
+  text-align: center;
+  justify-content: left;
+}
+
+.main_container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right:40px;
+}
+
+.main_container h3 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.user_show {
+  max-width: 600px;
+}
+.one_post, .past_post {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #C3C3C3;
+}
+
+.post_user {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #4267B2;
+}
+
+.post_content {
+  font-size: 0.9rem;
+}
+.post_option {
+  display: flex;
+  justify-content: center;
+}
+.post_option p {
+  font-size: 0.8rem;
+  margin-right: 5px;
+  padding: 2px;
+  width: 100px;
+  text-align: center;
+  background-color: #C3C3C3;
+  border-radius: 0.8rem;
+}
+
+.past_posts {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.to_other_page {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px;
+  width: 150px;
+  background-color: #4267B2;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+
+.to_other_page a {
+  color: #fff
+}
+
+.button {
+  margin-top: 15px;
+}
+
+.footer_container {
+  margin-top: 50px;
+  height: 30px;
+  width: 100%;
+  background-color: #C3C3C3;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}

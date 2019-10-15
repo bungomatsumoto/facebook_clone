@@ -1,4 +1,4 @@
-<h2>登録する</h2>
+<h3>登録する</h3>
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -11,28 +11,30 @@
   </div>
 <% end %>
 
-<div class="">
+<div class="signup_form">
 <%= form_with(model: @user, local: true) do |f| %>
 
-  <div class="">
-    <%= f.label :名前 %>
+  <div class="signup_item">
+    <%= f.label :名前 %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="">
-    <%= f.label :email %>
+  <div class="signup_item">
+    <%= f.label :email %><br>
     <%= f.email_field :email %>
   </div>
 
-  <div class="">
-    <%= f.label :パスワード %>
+  <div class="signup_item">
+    <%= f.label :パスワード %><br>
     <%= f.password_field :password %>
   </div>
 
-  <div class="">
-    <%= f.label :確認用パスワード %>
+  <div class="signup_item">
+    <%= f.label :確認用パスワード %><br>
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <%= f.submit "アカウントを作成する" %>
+  <div class="button">
+    <%= f.submit "アカウントを作成する" %>
+  </div>
 <% end %>
 </div>

@@ -7,20 +7,48 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href = "https://fonts.googleapis.com/css?family= Voces＆display = swap" rel = "stylesheet">
   </head>
 
   <body>
-    <div class="login_entrance">
+    <div class="wrapper">
 
-      <% if logged_in? %>
-        <%= link_to "プロフィール", user_path(current_user.id) %>
-        <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-      <% else %>
-        <%= link_to "登録する", new_user_path %>
-        <%= link_to "ログイン", new_session_path %>
-      <% end %>
+      <header>
+        <div class="header_container">
+            <%= image_tag 'cpu.png', class:'fakebooks_icon' %><span id="header_title">FAKEBOOKS</span>
+        </div>
+        <div id="login">
+        <% if logged_in? %>
+          <span class="login_entrance">
+            <%= link_to "プロフィール", user_path(current_user.id) %>
+          </span>
+          <span class="login_entrance">
+            <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+          </span>
+        <% else %>
+          <span class="login_entrance">
+            <%= link_to "登録する", new_user_path %>
+          </span>
+          <span class="login_entrance">
+              <%= link_to "ログイン", new_session_path %>
+          </span>
+          <% end %>
+        </div>
+
+      </header>
+
+      <main>
+        <div class="main_container">
+
+        <%= yield %>
+        </div>
+
+      <footer>
+        <div class="footer_container">
+          <p><small>(C)2019 FAKEBOOKS. All Rights Reserved.</small></p>
+        </div>
+      </footer>
+
     </div>
-
-    <%= yield %>
   </body>
 </html>
