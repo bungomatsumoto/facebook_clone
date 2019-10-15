@@ -10,7 +10,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
+    # has_manyのpostsを使い、current_userのpostをnewする
     if params[:back]
       render :new
     else
@@ -37,7 +38,7 @@ class PostsController < ApplicationController
   end
 
   def confirm
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     render :new if @post.invalid?
   end
 
