@@ -132,6 +132,7 @@ img.fakebooks_icon {
   width: 150px;
   background-color: #4267B2;
   border-radius: 0.8rem;
+  border: solid 0.5px #333;
   text-align: center;
 }
 
